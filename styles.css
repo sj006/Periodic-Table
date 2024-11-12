@@ -1,0 +1,242 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e2f;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-y: scroll;
+}
+
+h1 {
+    margin: 20px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* General scrollbar styling for WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 2px; /* Width of vertical scrollbar */
+    height: 2px; /* Height of horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #000; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: aqua; /* Scrollbar thumb color */
+    border-radius: 10px; /* Rounded scrollbar edges */
+}
+
+/* Scrollbar styling for Firefox */
+* {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: aqua #000; /* Thumb and track color */
+}
+
+nav div {
+    display: grid;
+    grid-template-columns: repeat(8, 10%); /* 6 links per row */
+    justify-content: center;
+    gap: 10px; /* Space between the links */
+    padding: 10px;
+  }
+
+nav div a{
+    z-index: 200;
+}
+
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(18, 90px); /* 18 groups */
+    gap: 5px;
+    justify-content: center;
+    max-width: 90%;
+    margin: auto;
+}
+
+/* F-block Container */
+.f-container {
+    display: grid;
+    grid-template-columns: repeat(14, 0px); /* 14 columns */
+    gap: 5px;
+    justify-content: center;
+    margin-top: 20px;
+    /* padding: 10px 10px; Add some padding for visibility */
+}
+
+/* Element Styling */
+.element {
+    width: 70px;
+    height: 80px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    border: solid;
+    text-shadow: 0px 0px 15px ;
+    transition: transform 0.2s;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.element:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+}
+
+/* Block Colors */
+.s-block { color: #6ba4ff;}  /* Light Blue */
+.p-block { color: #ff6b6b; }  /* Light Red */
+.d-block { color: #ffd66b; }  /* Yellow */
+.f-block { color: #058d2c; }  /* Light Green */
+.L-block { color: #cb5bff; }  /* Light Green */
+.A-block { color: #ad09ff; }  /* Light Green */
+
+/* Highlight Effect */
+.highlight {
+   
+    /*border: 2px solid #20b2aa; /* Darker shade for the border */
+    box-shadow: 0 0 15px 5px rgba(64, 224, 208, 0.6), 0 0 25px 10px rgba(32, 178, 170, 0.8); /* Glow effect */
+    transform: scale(1.05); /* Slight enlargement */
+    border-radius: 8px; /* Rounded corners */
+    animation: glow 1.2s infinite alternate; /* Glowing animation */
+    z-index: 100;
+  }
+  
+  /* Glow Animation */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.6);
+    }
+    100% {
+      box-shadow: 0 0 30px 10px rgba(64, 224, 208, 0.9);
+    }
+  }
+
+/* Element Properties */
+.atomic-number { font-size: 14px; opacity: 0.8; }
+.symbol { font-size: 20px; }
+.name { font-size: 10px; }
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 75%;
+    max-width: 800px;
+    max-height: 600px;
+    background-color: black;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    z-index: 100;
+}
+
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    gap: 10%;
+    margin: auto;
+}
+
+.properties-table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: #000;
+    color: aqua;
+    font-family: Arial, sans-serif;
+    border: 2px solid aqua;
+}
+
+.properties-table td {
+    padding: 8px 12px;
+    border: 1px solid aqua;
+}
+
+.properties-table tr:nth-child(even) {
+    background-color: #002222; /* Darker shade for even rows */
+}
+
+.properties-table td:first-child {
+    font-weight: bold;
+    color: #b3ffff; /* Slightly lighter aqua color for labels */
+}
+.popup-content h2 {
+    font-size: 28px;
+    margin-top: 0;
+    color: aqua;
+    font-weight: bold;
+}
+
+.popup-content p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.close-btn {
+    display: flex;
+    position: fixed; /* Ensures it's fixed to the viewport */
+    right: 10px; /* Adjust position to be more visible */
+    top: 10px; /* Adjust position to be more visible */
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000; /* Makes sure it's above other content */
+}
+
+.close-btn:hover {
+    background-color: #d32f2f;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+    transition: color 0.3s, background-color 0.3s;
+  }
+
+  a.active {
+    color: rgba(64, 224, 208, 0.9);
+    border-radius: 4px;
+  }
+
+  a:hover {
+    color: rgb(164, 74, 248);
+  }
