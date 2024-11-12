@@ -50,11 +50,10 @@ nav div a{
 
 .periodic-table {
     display: grid;
-    grid-template-columns: repeat(18, 90px); /* 18 groups */
+    grid-template-columns: repeat(18, 5.55%); /* 18 groups */
     gap: 5px;
     justify-content: center;
     margin: 10%;
-    padding: 10%;
 }
 
 /* F-block Container */
